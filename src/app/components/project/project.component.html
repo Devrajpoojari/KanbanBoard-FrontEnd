@@ -1,0 +1,119 @@
+<!-- <body class="class">
+<section class="project">
+    <div class="container">
+        <div class="card m-3 font shadow-lg p-3 mb-5 bg-white rounded">
+
+            <div class="card login-card">
+                <div class="card-body ">
+                    <div class="col-md-6 offset-md-3">
+
+                        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+                            <div class="form-group">
+                                <label for="firstnamelabel">Project Name * </label>
+                                <input type="text" class="form-control" id="Projectname"name="firstnamelabel"
+                                    [(ngModel)]="project.projectName" required minlength="3" pattern="[a-zA-Z ]*" #projectname="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && projectname.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+
+                                <div class="alert alert-danger" *ngIf="(projectname.touched || f.submitted)">ProjectName is Required.
+                                <div *ngIf="projectname.errors?.['required']"></div>
+                                <div *ngIf="projectname.errors?.['minlength']">ProjectName should be Morethan 3 Characters</div>
+                                <div *ngIf="projectname.errors?.['pattern']">Invalid Name</div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastnamelabel">Description * </label>
+
+                                <input type="text" class="form-control" id="description" name="lastnamelabel"
+                                    [(ngModel)]="project.description" required minlength="20" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #description="ngModel">
+                                <div class="alert alert-danger" *ngIf="(description.touched || f.submitted )">Description is Required
+                                    <div *ngIf="description.errors?.['required']"></div>
+                                    <div *ngIf="description.errors?.['minlength']">Description should be Morethan 20 Characters</div>
+                                    <div *ngIf="description.errors?.['pattern']">Invalid input</div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-dark pmd-ripple-effect btn-block" [disabled]="f.invalid"> Create Project </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body> -->
+
+<body class="project">
+  <main class="container">
+    <div [hidden]="submitted">
+      <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+         <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="fa fa-plus"></i>
+          Create Project
+        </button>
+        
+        <button type="button" style='margin-left:16px' class="btn btn-primary mt-3" data-bs-target="#exampleModal"
+                                                  routerLink="/projectlist">
+          <i class="fa fa-pencil"></i>
+          Edit Projects
+        </button>
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Create Project</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+         
+          <div class="modal-body form-group">
+           
+            <div class="mb-3 row">
+              <label for="projectName" class="col-sm-2 col-form-label">Project Name*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" [(ngModel)] ="project.projectName" 
+                #projectName="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && description .invalid }" required minlength="4"
+                name="projectName" id="projectName">
+                <div *ngIf="f.submitted && projectName.invalid" class="invalid-feedback">
+                  <div *ngIf="projectName.errors?.['required']">projectName is required</div>
+                  <div *ngIf="projectName.errors?.['minlength']">projectName must be a length of 4</div>
+              </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              
+              <label for="description" class="col-sm-2 col-form-label">Description*</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" [(ngModel)]="project.description"  
+                #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }" required minlength="4"
+                name="title" id="title">
+                <div *ngIf="f.submitted && description.invalid" class="invalid-feedback">
+                  <div *ngIf="description.errors?.['required']">description is required</div>
+                  <div *ngIf="description.errors?.['minlength']">description must be a length of 20</div>
+              </div>
+              </div>
+            </div>
+          </div>
+          
+          
+            
+    
+          <div class="modal-footer align-items-center d-grid">
+            
+            <button type="submit" class="btn btn-success">create</button>
+          </div>
+        </div>    
+      </div>
+  </div>
+  </form>
+  </div>
+      
+  </main>
+  </body>
+     

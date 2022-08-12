@@ -1,0 +1,78 @@
+<main class="container">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+      <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa fa-plus"></i>
+        Create Task
+      </button>
+
+      <button type="button" style='margin-left:16px' class="btn btn-primary mt-3"  routerLink="/addTeams">
+        <i class="fa fa-plus"></i>
+       Team
+      </button>
+
+      <button type="button" style='margin-left:16px' class="btn btn-primary mt-3"  routerLink="/projects">
+        <i class="fa fa-plus"></i>
+        Project
+      </button>
+  
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Creating a Task</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       
+        <div class="modal-body form-group">
+          <div class="mb-3 row">
+          
+            <label for="id" class="col-sm-2 col-form-label">Id</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" [(ngModel)]=" tasks.id" name="id" id="id">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" [(ngModel)] ="tasks.description" 
+              #description="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && description .invalid }" required minlength="4"
+              name="description" id="description">
+              <div *ngIf="f.submitted && description.invalid" class="invalid-feedback">
+                <div *ngIf="description.errors?.['required']">Description is required</div>
+                <div *ngIf="description.errors?.['minlength']">Description must be a length of 4</div>
+            </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" [(ngModel)]="tasks.title"  
+              #title="ngModel" [ngClass]="{ 'is-invalid': f.submitted && title.invalid }" required minlength="4"
+              name="title" id="title">
+              <div *ngIf="f.submitted && title.invalid" class="invalid-feedback">
+                <div *ngIf="title.errors?.['required']">Title is required</div>
+                <div *ngIf="title.errors?.['minlength']">Title must be a length of 4</div>
+            </div>
+            </div>
+          </div>
+        </div>
+        
+        
+          
+  
+        <div class="modal-footer align-items-center d-grid">
+          
+          <button type="submit" class="btn btn-success">Save</button>
+        </div>
+      </div>    
+    </div>
+</div>
+</form>
+</div>
+    
+</main>
+  
+   

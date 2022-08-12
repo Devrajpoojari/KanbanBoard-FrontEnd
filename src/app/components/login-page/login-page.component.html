@@ -1,0 +1,51 @@
+<!-- <div class="container-fluid" id="bg">
+    <div class="text text-secondary text-center">
+        <h2><i class="fa fa-shopping-cart pr-2"></i>Grocery Store</h2>
+    </div> -->
+    <div class="global-container ">
+
+        <div class="card login-form text-dark shadow-sm p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <h3 class="card-title">Login into your account</h3>
+                <div class="card-text">
+                    <!--
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                        <!-- to error: add class "has-danger" -->
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">
+                                <i class="bi bi-person-fill"></i>
+                                &nbsp;User Name
+                            </label>
+                            <input type="text" class="form-control form-control-sm" name="username" 
+                            [(ngModel)]="model.username" #username="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && username.invalid }" required minlength="6"
+                            id="userid" aria-describedby="userhelp">
+                            <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+                                <div *ngIf="username.errors?.['required']">username is required</div>
+                                <div *ngIf="username.errors?.['username']">username must be a valid username</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1"><i class="bi bi-shield-lock-fill"></i>&nbsp;Password</label>
+                            
+                            <input type="password" class="form-control form-control-sm"  id="pwd" name="password"
+                            [(ngModel)]="model.password" #password="ngModel" 
+                            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6">
+                            <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+                                <div *ngIf="password.errors?.['required']">Password is required</div>
+                            </div>
+                            <a href="#" class="mt-1 mb-2"   style="float:right;font-size:12px;">Forgot password?</a>
+                        </div>
+                        <button type="submit" id="submit"class="btn btn-dark btn-block">Sign in</button>
+                        
+                        <div class="sign-up">
+                            Don't have an account? <a href="register">Create One</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    

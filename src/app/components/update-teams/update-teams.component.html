@@ -1,0 +1,30 @@
+<h3>Update Teams</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Id</label>
+            <input type="text" class="form-control" id="id" required [(ngModel)]="teams.id" name="id">
+          </div>
+
+          <div class="form-group">
+            <label for="name">teamLeadName</label>
+            <input type="text" class="form-control" id="teamLeadName" required [(ngModel)]="teams.teamLeadName" name="teamLeadName">
+          </div>
+
+          <div class="form-group">
+            <label for="name">teamMembersName</label>
+            <input type="text" class="form-control" id="teamMembersName" required [(ngModel)]="teams.teamMembersName" name="teamMembersName">
+          </div>
+
+          <div class="form-group">
+            <label for="name">teamName</label>
+            <input type="text" class="form-control" id="teamName" required [(ngModel)]="teams.teamName" name="teamName">
+          </div>
+
+          
+      <!-- <button style='margin-right:16px' class="btn btn-success">Submit</button> -->
+     <!--  <button class="btn btn-dark pmd-ripple-effect btn-block">submit</button>  -->
+     <!--  <button style='margin-right:16px' (click)="list" class="btn btn-success">Go Back</button> -->
+     <button style='margin-right:16px' class="btn btn-success">Submit</button>
+      <button style='margin-right:16px' (click)="list()" class="btn btn-success">Go Back</button>
+
+  </form>

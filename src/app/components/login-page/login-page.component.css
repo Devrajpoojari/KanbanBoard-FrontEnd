@@ -1,0 +1,60 @@
+div{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.global-container{
+    font-family: Arial, Helvetica, sans-serif;
+	height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+
+form{
+	padding-top: 10px;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
+.card-title{ font-weight:300; }
+
+.btn{
+	font-size: 14px;
+	margin-top:20px;
+}
+.btn:hover{
+	background-color: #42A948;
+}
+
+
+.login-form{ 
+	width:330px;
+	margin:20px;
+}
+
+.sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+.alert{
+	margin-bottom:-30px;
+	font-size: 13px;
+	margin-top:20px;
+}
+/* input[type=email] {
+	border: none;
+	border-bottom: 2px solid red;
+  }
+  input[type=email]:focus {
+	border: 3px solid #555;
+  }
+ */  
+ .ng-valid[required], .ng-valid.required  {
+	border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+	border-left: 5px solid #a94442; /* red */
+  }

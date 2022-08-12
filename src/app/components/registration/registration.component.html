@@ -1,0 +1,242 @@
+<!-- <div class="container col-md-2" style="padding: 10px;" >
+    <h2 style="color: blueviolet;">Registeration</h2>
+    <form (ngSubmit)="registerNow()" novalidate>
+
+        <div class="mb-3">
+            
+            <input type="text" class="from-control" id="name" name="userFirstName" placeholder="First Name" [(ngModel)]="user.userFirstName" required>
+        </div>
+
+        <div class="mb-3">
+         
+            <input type="text" class="from-control" id="name" name="userLastName" placeholder="Last name" [(ngModel)]="user.userLastName" required>
+        </div>
+        <div class="mb-3">
+           
+            <input type="text" class="from-control" id="name" name="email" placeholder="email"  [(ngModel)]="user.email" required>
+        </div>
+        <div class="mb-3">
+           
+            <input type="text" class="from-control" id="name" name="phoneNo" placeholder="Phone no" [(ngModel)]="user.phoneNo" required>
+        </div>
+        <div class="mb-3">
+            
+            <input type="text" class="from-control" id="name" name="userName" placeholder="Username" [(ngModel)]="user.userName" required>
+        </div>
+
+        <div class="mb-3">
+            
+            <input type="password" class="from-control" id="name" name="userPassword" placeholder="Password"  [(ngModel)]="user.userPassword" required>
+        </div>
+        <div class="mb-3">
+           
+            <label for="name" class="form-lable">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked [(ngModel)]="user.gender" required >
+                <label class="form-check-label" for="exampleRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female"  [(ngModel)]="user.gender" required>
+                <label class="form-check-label" for="exampleRadios2">
+                  Female
+                </label>
+              </div>
+        </div>
+        <button type="submit" class="btn btn-primary"> Register</button>
+
+    </form>
+
+</div> -->
+
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registeration</p>
+  
+                  <form class="mx-1 mx-md-4"     #f="ngForm"(ngSubmit)="f.form.valid && registerNow()"novalidate >
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                     <div class="form-group">
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control" id="name" name="userFirstName" placeholder="First Name"
+                         [(ngModel)]="user.userFirstName" required
+                         #userfirst="ngModel" required
+                         [ngClass]="{ 'is-invalid': f.submitted &&userfirst.invalid }"
+                         [ngModelOptions]="{standalone: true}" 
+                         />
+                         <span class="text-danger"
+                         *ngIf="(userfirst.touched || f.submitted) && userfirst.errors?.['required']">
+                         User First Name is required
+                       </span>
+                        </div>
+                        <!-- <label class="form-label" for="">Your Name</label> -->
+                        &nbsp; &nbsp;  &nbsp; &nbsp; 
+                      
+                      
+                      <div class="form-group">
+                        <input type="text" id="form3Example1c" class="form-control" id="name" name="userLastName" placeholder="Last Name" 
+                        
+                        [(ngModel)]="user.userLastName" required
+                        #userlast="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted &&userlast.invalid }"
+                        [ngModelOptions]="{standalone: true}" 
+                       
+                        />
+                        <span class="text-danger"
+                        *ngIf="(userlast.touched || f.submitted) && userlast.errors?.['required']">
+                        User Last Name is required
+                      </span>
+
+                      </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                      
+                      <div class="form-group">
+                        <input type="email" id="form3Example3c" class="form-control"  
+                        name="email" placeholder="email"  [(ngModel)]="user.email" required
+                        #username="ngModel" [pattern]="usernamePattern"
+                        [ngClass]="{ 'is-invalid': f.submitted &&username.invalid }"
+                        [ngModelOptions]="{standalone: true}" 
+                      
+                        />
+                        <span class="text-danger"
+                        *ngIf="(username.touched || f.submitted) && username.errors?.['required']">
+                        User Name is required
+                      </span>
+                      <div *ngIf="(username.touched||f.submitted )&& username.errors?.['pattern']"
+                      class="invalid-feedback"> Enter a Valid Email</div>
+
+
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="text" class="form-control" id="name" name="phoneNo" placeholder="Phone no" [(ngModel)]="user.phoneNo"
+                            #phoneid="ngModel" required name="phone"
+                          [ngClass]="{ 'is-invalid': f.submitted && phoneid.invalid }"
+                          [ngModelOptions]="{standalone: true}" minlength="10" maxlength="10">
+                      <div *ngIf="(phoneid.touched||f.submitted )&& phoneid.errors?.['required']"
+                          class="invalid-feedback">
+                          Mobile Number is required.
+                      </div>
+                      <div *ngIf="(phoneid.touched||f.submitted )&& phoneid.errors?.['minlength']"
+                          class="invalid-feedback">Mobile Number Length should be atleast 10! </div>
+                        </div>
+
+                      </div>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="email" class="form-control" name="userName" placeholder="Username" [(ngModel)]="user.userName" required 
+                          #usernameid="ngModel" [pattern]="usernamePattern"
+                          [ngClass]="{ 'is-invalid': f.submitted &&usernameid.invalid }"
+                          [ngModelOptions]="{standalone: true}" 
+                        
+                          />
+                          <span class="text-danger"
+                          *ngIf="(usernameid.touched || f.submitted) && usernameid.errors?.['required']">
+                          User Name is required
+                        </span>
+                        <div *ngIf="(usernameid.touched||f.submitted )&& usernameid.errors?.['pattern']"
+                        class="invalid-feedback"> Enter a Valid Username</div>
+  
+  
+  
+                        </div>
+                      </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        
+
+                        <!-- <div class="form-group">
+                        <input type="password" id="form3Example4c" class="form-control"
+                           name="userPassword" placeholder="Password"  [(ngModel)]="user.userPassword" required 
+                           #passwordid="ngModel" [pattern]="passwordPattern"
+                           [ngClass]="{ 'is-invalid': f.submitted && passwordid.invalid }"
+                                        [ngModelOptions]="{standalone: true}"/>
+                                        <div *ngIf="(passwordid.touched||f.submitted )&& passwordid.errors?.required"
+                                        class="invalid-feedback">
+                                        Password is required.
+                                    </div>
+                                    <div *ngIf="(passwordid.touched||f.submitted )&& passwordid.errors?.pattern"
+                                        class="invalid-feedback"> Password must be 8-12 characters and contains both numbers
+                                        and letters/special characters!</div>
+
+                      </div> -->
+                      <div class="form-group">
+
+                        <label for="password"> Password</label>
+                        <input type="password" placeholder="password" class="form-control" required 
+                        [pattern]="passwordPattern" maxlength="12"
+                            [(ngModel)]="user.userPassword" #passwordid="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && passwordid.invalid }"
+                            [ngModelOptions]="{standalone: true}">
+                            <div *ngIf="(passwordid.touched||f.submitted )&& passwordid.errors?.['required']"
+                            class="invalid-feedback">
+                            Password is required.
+                        </div>
+                        <div *ngIf="(passwordid.touched||f.submitted )&& passwordid.errors?.['pattern']"
+                            class="invalid-feedback"> Password must be 8-12 characters and contains both numbers
+                            and letters/special characters!</div>
+
+
+                    </div>
+                        <div class="mb-3">
+           
+                            <label for="name" class="form-lable">Gender</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked [(ngModel)]="user.gender" required >
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Male
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female"  [(ngModel)]="user.gender" required>
+                                <label class="form-check-label" for="exampleRadios2">
+                                  Female
+                                </label>
+                              </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

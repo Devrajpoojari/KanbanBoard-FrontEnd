@@ -1,0 +1,22 @@
+<h3>Update Project</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Id</label>
+            <input type="text" class="form-control" id="rid" required [(ngModel)]="project.id" name="rid">
+          </div>
+
+          <div class="form-group">
+            <label for="name">Project Name</label>
+            <input type="text" class="form-control" id="rname" required [(ngModel)]="project.projectName" name="rname">
+          </div>
+
+          <div class="form-group">
+            <label for="name">Description</label>
+            <input type="text" class="form-control" id="raddress" required [(ngModel)]="project.description" name="raddress">
+          </div>
+
+      <button style='margin-right:16px' class="btn btn-success">Submit</button>
+      <button style='margin-right:16px' (click)="list()" class="btn btn-success">Go Back</button>
+
+  </form>
+

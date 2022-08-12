@@ -1,0 +1,718 @@
+<!--   <h3>Add Teams</h3>
+<div [hidden]="submitted" style="width:400px;" class="div">
+    <form (ngSubmit) ="onSubmit()">
+        <div class="form-group">
+            <label for="name">Id</label>
+            <input type="text" class="form-control" id="id" required [(ngModel)]="teams.id" name="id">
+        </div>
+        <div class="form-group">
+            <label for="Name">TeamLeadName</label>
+            <input type="text" class="form-control" id="teamLeadName" required [(ngModel)]="teams.teamLeadName" name="teamLeadName">
+        </div>
+        <div class="form-group">
+            <label for="Name">TeamMembersName</label>
+            <input type="text" class="form-control" id="teamMembersName" required [(ngModel)]="teams.teamMembersName" name="teamMembersName">
+        </div>
+        <div class="form-group">
+            <label for="Name">TeamName</label>
+            <input type="text" class="form-control" id="teamName" required [(ngModel)]="teams.teamName" name="teamName">
+        </div>
+
+
+
+        <button class="btn btn-success">Create Teams</button>
+        
+    </form>
+</div> -->
+        
+ 
+
+
+        
+
+        
+
+   
+
+
+
+  
+             
+
+             
+
+        
+
+
+<!-- 
+   <section class="Signup">
+    <div class="container">
+        <div class="m-3 font shadow-lg p-3 mb-5 w-100 .sect1">
+
+             <div class="bg-warning w-100">
+                <h5 class="text-black text-center">Teams</h5>
+            </div> 
+             <div class="w-100">
+               
+                    <div class="col-md-6 offset-md-3 w-100">
+                       
+ <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
+                            <div class="form-group">
+
+                                <label for="useridlabel">UserId</label>
+
+                                <input type="number" class="form-control" id="receiptNo" placeholder="Enter ID">
+                                <small id="emailHelp" class="form-text "></small>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="firstnamelabel">Team Name * </label>
+                                <input type="text" class="form-control" id="Teamname"name=""
+                                    [(ngModel)]="teams.teamName"  #teamname="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamname.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+
+
+                                <div *ngIf="(teamname.touched||f.submitted )&& teamname.errors?.['required']"
+                                    class="invalid-feedback">
+                                    teamsName is required.
+                                </div>
+                                <div *ngIf="(teamname.touched||f.submitted )&& teamname.errors?.['maxlength']"
+                                    class="invalid-feedback"></div>
+                                 
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastnamelabel">TeamLeadName * </label>
+
+                                <input type="text" class="form-control" id="teamLeadName" name="lastnamelabel"
+                                    [(ngModel)]="teams.teamLeadName" required #teamLeadName="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamLeadName.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+                                <div *ngIf="f.submitted && teamLeadName.invalid" class="invalid-feedback">
+                                    <div *ngIf="teamLeadName.errors?.['required']">TeamLeadName is required</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastnamelabel">TeamMembersName * </label>
+
+                                <input type="text" class="form-control" id="teamMembersName" 
+                                    [(ngModel)]="teams.teamMembersName" required #teamMembersName="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamMembersName.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+                                <div *ngIf="f.submitted && teamMembersName.invalid" class="invalid-feedback">
+                                    <div *ngIf="teamMembersName.errors?.['required']">TeamMembersName is required</div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-success pmd-ripple-effect btn-block">submit</button> 
+                         
+
+                        </form>
+
+                    </div>
+            
+            </div>
+        </div>
+    </div>
+
+ --><!-- </section>  -->
+ 
+
+
+  <!-- <section class="teams">
+
+    <div class="container">
+
+        <div class="card m-3 font shadow-lg p-3 mb-5 bg-white rounded">
+
+
+
+            <div class="card-header bg-warning">
+
+                <h5 class="text-white text-center">Project</h5>
+
+            </div> --> 
+
+            <!-- <div class="card login-card">
+
+                <div class="card-body ">
+
+                    <div class="col-md-6 offset-md-3">
+                        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+
+
+
+                             <div class="form-group">
+
+
+
+                                <label for="useridlabel">UserId</label>
+
+
+
+                                <input type="number" class="form-control" id="receiptNo" disabled="true" placeholder="">
+
+                                <small id="emailHelp" class="form-text text-muted">Your Id is Autogenerate.</small>
+
+                            </div> 
+                            <div class="form-group">
+
+                                <label for="firstnamelabel">Teams Name * </label>
+
+                                <input type="text" class="form-control" id="Teamsname"name="firstnamelabel"
+
+                                    [(ngModel)]="teams.teamsName" required minlength="3" pattern="[a-zA-Z ]*" #teamsname="ngModel"
+
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamsname.invalid }"
+
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+
+
+
+                                <div class="alert alert-danger" *ngIf="(teamsname.touched || f.submitted)">TeamsName is Required.
+
+                                <div *ngIf="teamsname.errors?.['required']"></div>
+
+                                <div *ngIf="teamsname.errors?.['minlength']">TeamsName should be Morethan 3 Characters</div>
+
+                                <div *ngIf="teamsname.errors?.['pattern']">Invalid Name</div>
+
+                                 <div *ngIf="(projectname.touched||f.submitted )&& projectname.errors?.['maxlength']"
+
+                                    class="invalid-feedback"></div> -->
+
+                                <!--  FirstName is min 4 -->
+<!-- 
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div>
+
+                           <div class="form-group">
+
+                            <label for="lastnamelabel">TeamLeadName * </label>
+
+
+
+                            <input type="text" class="form-control" id="teamLeadName" name="lastnamelabel"
+
+                                [(ngModel)]="teams.teamLeadName" required minlength="20" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #teamLeadName="ngModel">
+
+                                 [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
+
+                                [ngModelOptions]="{standalone: true}" placeholder="Enter Description"> 
+
+                            <div class="alert alert-danger" *ngIf="(teamLeadName.touched || f.submitted )">teamLeadName is Required
+
+                                <div *ngIf="teamLeadName.errors?.['required']"></div>
+
+                                <div *ngIf="teamLeadName.errors?.['minlength']">teamLeadName should be Morethan 20 Characters</div>
+
+                                <div *ngIf="teamLeadName.errors?.['pattern']">Invalid input</div>
+
+                            </div>
+
+                        </div>
+
+                        
+                        <div>
+
+                            <div class="form-group">
+ 
+                             <label for="lastnamelabel">TeamMembersName * </label>
+ 
+ 
+ 
+                             <input type="text" class="form-control" id="teamMembersName" name="lastnamelabel"
+ 
+                                 [(ngModel)]="teams.teamMembersName" required minlength="20" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #teamMembersNamee="ngModel">
+  -->
+                                <!--  [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
+ 
+                                 [ngModelOptions]="{standalone: true}" placeholder="Enter Description"> -->
+ 
+                            <!--  <div class="alert alert-danger" *ngIf="(teamMembersName.touched || f.submitted )">teamMembersName is Required
+ 
+                                 <div *ngIf="teamMembersName.errors?.['required']"></div>
+ 
+                                 <div *ngIf="teamMembersName.errors?.['minlength']">teamMembersNamee should be Morethan 20 Characters</div>
+ 
+                                 <div *ngIf="teamMembersName.errors?.['pattern']">Invalid input</div>
+ 
+                             </div>
+  -->
+                         <!-- </div>
+                         <button class="btn btn-dark pmd-ripple-effect btn-block" [disabled]="f.invalid"> Create Project </button>
+
+
+
+                        </form>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</section> 
+
+-->
+
+ <!-- <section class="Signup">
+    <div class="container">
+        <div class="card m-3 font shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="card login-card">
+
+                <div class="card-body ">
+
+                    <div class="col-md-6 offset-md-3">
+                        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+
+                            <div class="form-group">
+                    
+                                <label for="firstnamelabel">UserId * </label>
+
+                                <input type="text" class="form-control" id="UserId"name="firstnamelabel"
+
+                                [(ngModel)]="teams.id" required minlength="3" pattern="[a-zA-Z ]*" #userid="ngModel"
+
+                                    [ngClass]="{ 'is-invalid': f.submitted && userid.invalid }"
+
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+    
+
+                                    <div class="alert alert-danger" *ngIf="(userid.touched || f.submitted)">userid is Required.
+
+                                        <div *ngIf="userid.errors?.['required']"></div>
+        
+                                        <div *ngIf="userid.errors?.['minlength']">UserId should be Morethan 3 Characters</div>
+        
+                                        <div *ngIf="userid.errors?.['pattern']">Invalid Name</div>
+                                    </div>
+                            </div>
+
+                 
+               
+                            <div class="form-group">
+
+                                <label for="firstnamelabel">Teams Name * </label>
+
+                                <input type="text" class="form-control" id="Teamsname"name="firstnamelabel"
+
+                                [(ngModel)]="teams.teamName" required minlength="3" pattern="[a-zA-Z ]*" #teamsname="ngModel"
+
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamsname.invalid }"
+
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+    
+
+                                    <div class="alert alert-danger" *ngIf="(teamsname.touched || f.submitted)">teamsName is Required.
+
+                                        <div *ngIf="teamsname.errors?.['required']"></div>
+        
+                                        <div *ngIf="teamsname.errors?.['minlength']">TeamsName should be Morethan 3 Characters</div>
+        
+                                        <div *ngIf="teamsname.errors?.['pattern']">Invalid Name</div>
+                                    </div>
+                            </div>
+
+                        
+
+
+
+                            <div class="form-group">
+
+                               <label for="lastnamelabel">TeamLeadName * </label>
+
+
+
+                                <input type="text" class="form-control" id="teamLeadName" name="lastnamelabel"
+
+                                [(ngModel)]="teams.teamLeadName" required minlength="20" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #teamLeadName="ngModel">
+
+                             
+
+                                <div class="alert alert-danger" *ngIf="(teamLeadName.touched || f.submitted )">TeamLeadName is Required
+
+                                    <div *ngIf="teamLeadName.errors?.['required']"></div>
+
+                                     <div *ngIf="teamLeadName.errors?.['minlength']">TeamLeadName should be Morethan 20 Characters</div>
+
+                                    <div *ngIf="teamLeadName.errors?.['pattern']">Invalid input</div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="lastnamelabel">TeamMembersName * </label>
+ 
+ 
+ 
+                                 <input type="text" class="form-control" id="TeamMembersName" name="lastnamelabel"
+ 
+                                 [(ngModel)]="teams.teamMembersName" required minlength="20" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #teamMembersName="ngModel">
+ 
+                              
+ 
+                                 <div class="alert alert-danger" *ngIf="(teamLeadName.touched || f.submitted )">TeamMembersName is Required
+ 
+                                     <div *ngIf="teamMembersName.errors?.['required']"></div>
+ 
+                                      <div *ngIf="teamMembersName.errors?.['minlength']">TeamMembersName should be Morethan 20 Characters</div>
+ 
+                                     <div *ngIf="teamMembersName.errors?.['pattern']">Invalid input</div>
+ 
+                                 </div>
+ 
+                            </div>
+
+                             <button class="btn btn-dark pmd-ripple-effect btn-block">submit</button> 
+                        </form>
+                    </div>
+
+                </div>             
+            </div>
+
+        </div>            
+    </div>  
+</section>            
+
+
+
+   -->
+
+
+
+    <!--  <section class="Signup">
+    <div class="container">
+        <div class="m-3 font shadow-lg p-3 mb-5 w-100 .sect1">
+             <div class="bg-primary w-100 ">
+                <h5 class="text-white text-center">Teams</h5>
+            </div> 
+             <div class="w-100">
+               
+                    <div class="col-md-6 offset-md-3 w-100">
+                       
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
+                            <div class="form-group">
+
+                                <label for="useridlabel">UserId</label>
+
+                                <input type="number" class="form-control" id="receiptNo" placeholder="">
+                                <small id="emailHelp" class="form-text "></small> 
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="firstnamelabel">Team Name * </label>
+                                <input type="text" class="form-control" id="Teamname"name="firstnamelabel"
+                                    [(ngModel)]="teams.teamName" required maxlength="21" #teamname="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamname.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+
+
+                                <div *ngIf="(teamname.touched||f.submitted )&& teamname.errors?.['required']"
+                                    class="invalid-feedback">
+                                    teamsName is required.
+                                </div>
+                                <div *ngIf="(teamname.touched||f.submitted )&& teamname.errors?.['maxlength']"
+                                    class="invalid-feedback"></div>
+                                
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastnamelabel">TeamLeadName * </label>
+
+                                <input type="text" class="form-control" id="teamLeadName" name="lastnamelabel"
+                                    [(ngModel)]="teams.teamLeadName" required #teamLeadName="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamLeadName.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+                                <div *ngIf="f.submitted && teamLeadName.invalid" class="invalid-feedback">
+                                    <div *ngIf="teamLeadName.errors?.['required']">TeamLeadName is required</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastnamelabel">TeamMembersName * </label>
+
+                                <input type="text" class="form-control" id="teamMembersName" name="lastnamelabel"
+                                    [(ngModel)]="teams.teamMembersName" required #teamMembersName="ngModel"
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamMembersName.invalid }"
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+                                <div *ngIf="f.submitted && teamMembersName.invalid" class="invalid-feedback">
+                                    <div *ngIf="teamMembersName.errors?.['required']">TeamMembersName is required</div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-dark pmd-ripple-effect btn-block">submit</button> 
+                         
+
+                        </form>
+
+                    </div>
+            
+            </div>
+        </div>
+    </div>
+
+</section>  
+ 
+
+
+ 
+
+
+ -->
+
+<!-- <body class="team">
+  <section class="teams">
+
+     <div class="container">
+
+        <div class="card m-3 font shadow-lg p-3 mb-5 bg-white rounded">
+
+            <div class="card login-card">
+
+                <div class="card-body ">
+
+                    <div class="col-md-6 offset-md-3">
+
+
+
+                        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+                            <button type="button" style='margin-left:16px' class="btn btn-primary mt-3"  routerLink="/addTeams">
+                                <i class="fa fa-plus"></i>
+                               Team
+                              </button>
+
+
+                            <div class="form-group">
+
+                                <label for="firstnamelabel">UserId * </label>
+
+                                <input type="text" class="form-control" id="UserId"name="firstnamelabel"
+    
+                                [(ngModel)]="teams.id" required minlength="3" pattern="[a-zA-Z ]*" #userid="ngModel"
+    
+                                    [ngClass]="{ 'is-invalid': f.submitted && userid.invalid }"
+    
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+
+
+                                    <div class="alert alert-danger" *ngIf="(userid.touched || f.submitted)">userid is Required.
+
+                                        <div *ngIf="userid.errors?.['required']"></div>
+        
+                                        <div *ngIf="userid.errors?.['minlength']">UserId should be Morethan 3 Characters</div>
+        
+                                        <div *ngIf="userid.errors?.['pattern']">Invalid Name</div>
+
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-group">
+
+                                <label for="firstnamelabel">Teams Name * </label>
+
+                                <input type="text" class="form-control" id="Teamsname"name="firstnamelabel"
+    
+                                [(ngModel)]="teams.teamName" required minlength="3" pattern="[a-zA-Z ]*" #teamsname="ngModel"
+    
+                                    [ngClass]="{ 'is-invalid': f.submitted && teamsname.invalid }"
+    
+                                    [ngModelOptions]="{standalone: true}" placeholder="">
+    
+    
+                                    <div class="alert alert-danger" *ngIf="(teamsname.touched || f.submitted)">teamsName is Required.
+    
+                                        <div *ngIf="teamsname.errors?.['required']"></div>
+        
+                                        <div *ngIf="teamsname.errors?.['minlength']">TeamsName should be Morethan 3 Characters</div>
+        
+                                        <div *ngIf="teamsname.errors?.['pattern']">Invalid Name</div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="lastnamelabel">TeamLeadName * </label>
+
+
+
+                             <input type="text" class="form-control" id="teamLeadName" name="lastnamelabel"
+
+                             [(ngModel)]="teams.teamLeadName" required minlength="8" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #teamLeadName="ngModel">
+
+                          
+
+                             <div class="alert alert-danger" *ngIf="(teamLeadName.touched || f.submitted )">TeamLeadName is Required
+
+                                 <div *ngIf="teamLeadName.errors?.['required']"></div>
+
+                                  <div *ngIf="teamLeadName.errors?.['minlength']">TeamLeadName should be  8 Characters</div>
+
+                                 <div *ngIf="teamLeadName.errors?.['pattern']">Invalid input</div>                    
+                              </div>
+
+
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="lastnamelabel">TeamMembersName * </label>
+
+
+
+                             <input type="text" class="form-control" id="TeamMembersName" name="lastnamelabel"
+
+                             [(ngModel)]="teams.teamMembersName" required minlength="20" pattern="[a-zA-Z0-9 a-zA-Z0-9]*" #teamMembersName="ngModel">
+
+                          
+
+                             <div class="alert alert-danger" *ngIf="(teamLeadName.touched || f.submitted )">TeamMembersName is Required
+
+                                 <div *ngIf="teamMembersName.errors?.['required']"></div>
+
+                                  <div *ngIf="teamMembersName.errors?.['minlength']">TeamMembersName should be Morethan 20 Characters</div>
+
+                                 <div *ngIf="teamMembersName.errors?.['pattern']">Invalid input</div>
+
+                               </div>
+
+                            </div>
+                    
+
+                            <button class="btn btn-dark pmd-ripple-effect btn-block" [disabled]="f.invalid"> Create Teams </button>
+
+                        </form>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+         </div>
+     </div>
+
+
+
+</section>
+</body> -->
+<body class="team">
+<main class="container">
+    <div [hidden]="submitted">
+      <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+        <button type="button"  class="btn btn-primary mt-3" data-bs-toggle="modal"  data-bs-target="#exampleModal">
+            <i class="fa fa-plus"></i>
+           Team
+          </button>
+
+          <button type="button" style='margin-left:16px' class="btn btn-primary mt-3"  data-bs-target="#exampleModal"
+                                        routerLink="/teamlist">
+            <i class="fa fa-pencil"></i>
+           Edit Team
+          </button>
+
+    
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Create Team</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+         
+          <div class="modal-body form-group">
+            <div class="mb-3 row">
+            
+              <label for="id" class="col-sm-2 col-form-label">Id</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" [(ngModel)]=" teams.id" name="id" id="id">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="teamLeadName" class="col-sm-2 col-form-label">TeamLeadName</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" [(ngModel)] ="teams.teamLeadName" 
+                #description="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && description .invalid }" required minlength="4"
+                name="teamLeadName" id="teamLeadName">
+                <div *ngIf="f.submitted && description.invalid" class="invalid-feedback">
+                  <div *ngIf="description.errors?.['required']">TeamLeadName is required</div>
+                  <div *ngIf="description.errors?.['minlength']">TeamLeadName must be a length of 4</div>
+              </div>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="teamMembersName" class="col-sm-2 col-form-label">TeamMembersName</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" [(ngModel)]="teams.teamMembersName"  
+                #title="ngModel" [ngClass]="{ 'is-invalid': f.submitted && title.invalid }" required minlength="4"
+                name="teamMembersName" id="teamMembersName">
+                <div *ngIf="f.submitted && title.invalid" class="invalid-feedback">
+                  <div *ngIf="title.errors?.['required']">TeamMembersName is required</div>
+                  <div *ngIf="title.errors?.['minlength']">TeamMembersName must be a length of 4</div>
+              </div>
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="teamName" class="col-sm-2 col-form-label">TeamName</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" [(ngModel)]="teams.teamName"  
+                  #title="ngModel" [ngClass]="{ 'is-invalid': f.submitted && title.invalid }" required minlength="4"
+                  name="teamName" id="teamName">
+                  <div *ngIf="f.submitted && title.invalid" class="invalid-feedback">
+                    <div *ngIf="title.errors?.['required']">TeamName is required</div>
+                    <div *ngIf="title.errors?.['minlength']">TeamName must be a length of 4</div>
+                </div>
+                </div>
+              </div>
+
+          </div>
+          
+          <div class="modal-footer align-items-center d-grid">
+            
+            <button type="submit" class="btn btn-success">Create Team</button>
+          </div>
+        </div>    
+      </div>
+  </div>
+  </form>
+  </div>
+      
+  </main>
+  </body>
+     

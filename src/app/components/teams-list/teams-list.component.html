@@ -1,0 +1,39 @@
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading">
+          <h2>Teams List</h2>
+        </div>
+        <div class="panel-body">
+          <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th >Id</th>
+                <th >TeamLeadName</th>
+                <th >TeamMembersName</th>
+                <th >TeamName</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let team of teams">
+                <td>{{team.id}}</td>
+                <td>{{team.teamLeadName}}</td>
+                <td>{{team.teamMembersName}}</td>
+                <td>{{team.teamName}}</td>
+
+                 <td><button style='margin-right:16px' (click)="updateTeams(team.id)" class="btn btn-success">Update</button>
+                   <button style='margin-right:16px' (click)="deleteTeams(team.id)" class="btn btn-success" style="margin-left: 10px">Delete</button>
+                   
+                   
+                   
+                </td> 
+                <!-- <td><button style='margin-right:16px' routerLink="/update" (click)="updateTeams(Teams)"     class="btn btn-success">Update</button>
+                  <button style='margin-right:16px' (click)="deleteTeams(Teams.id)" class="btn btn-success" style="margin-left: 10px">Delete</button>
+               </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </body>
+  
+    
